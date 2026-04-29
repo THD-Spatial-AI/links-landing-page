@@ -158,6 +158,23 @@
     }
     .institution { font-size: 0.82rem; color: var(--text-muted); line-height: 1.45; }
     .institution strong { color: var(--text); font-weight: 600; }
+    .qr-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .qr-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55em 1em;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+    .qr-btn:hover { border-color: var(--amber); color: var(--amber); }
+    .qr-btn small { font-weight: 400; opacity: 0.65; margin-left: 0.15em; }
   </style>
 </head>
 <body>
