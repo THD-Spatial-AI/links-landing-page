@@ -1,0 +1,27 @@
+{
+  "event": "Conference Name Year",
+  "title": "Project Title",
+  "subtitle": "One sentence describing what this project is about.",
+  "links": [
+    {
+      "category": "Category Label",
+      "title": "Link Title",
+      "url": "https://example.com",
+      "description": "One sentence describing what this link leads to.",
+      "icon": "globe"
+    },
+    {
+      "category": "Source Code",
+      "title": "Repository Name",
+      "url": "https://github.com/example/repo",
+      "description": "Source code and documentation.",
+      "icon": "github"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Department or Institute Name",
+      "unit": "University or Organisation"
+    }
+  ]
+}
