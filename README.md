@@ -12,7 +12,7 @@ Each page is defined by a single `page.json` file and deployed automatically to 
 3. Fill in the event name, title, links, and institution
 4. Commit to `main` — the page is live within ~60 seconds
 
-Full guide: [docs/add-a-page.md](docs/add-a-page.md)
+Full guide: [Add new page](https://thd-spatial-ai.github.io/linkhub/docs/add-a-page/)
 
 ## Repository structure
 
