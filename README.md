@@ -31,10 +31,12 @@ Full guide: [docs/add-a-page.md](docs/add-a-page.md)
     └── deploy.yml      ← builds and deploys on every push to main
 ```
 
-## One-time setup
-
-In the repository **Settings → Pages**, set the source to **GitHub Actions**.
-This only needs to be done once by the repo owner.
+> [!IMPORTANT]
+> In the repository **Settings → Pages**, set the source to **GitHub Actions**.
+>
+> - This allows the deploy workflow to publish the generated pages to GitHub Pages.
+>
+> - This only needs to be done once by the repo owner.
 
 ## Local preview
 
@@ -46,4 +48,4 @@ python3 -m http.server 8080 --directory _site
 
 ## License
 
-MIT
+[MIT License](LICENSE)
