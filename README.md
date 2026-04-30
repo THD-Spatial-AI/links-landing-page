@@ -3,7 +3,7 @@
 A central platform for publishing permanent landing pages for conferences, events, and research projects.
 Each page is defined by a single `page.json` file and deployed automatically to GitHub Pages.
 
-**Documentation:** [LinkHub-Docs](https://thd-spatial-ai.github.io/links-landing-page/docs/)
+**Documentation:** [LinkHub-Docs](https://thd-spatial-ai.github.io/linkhub/docs/)
 
 ## Quick start
 
