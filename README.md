@@ -1,9 +1,7 @@
 # LinkHub
 
 [![MkDocs](https://github.com/THD-Spatial-AI/linkhub/actions/workflows/docs.yml/badge.svg)](https://thd-spatial-ai.github.io/linkhub/docs)
-
 [![Link Check](https://github.com/THD-Spatial-AI/linkhub/actions/workflows/link-check.yml/badge.svg?branch=main)](https://thd-spatial-ai.github.io/linkhub)
-
 [![Build and Deploy](https://github.com/THD-Spatial-AI/linkhub/actions/workflows/deploy.yml/badge.svg)](https://github.com/THD-Spatial-AI/linkhub/actions/workflows/deploy.yml)
 
 A central platform for publishing permanent landing pages for conferences, events, and research projects.
