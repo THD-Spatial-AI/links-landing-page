@@ -232,23 +232,6 @@ CSS = """\
     }
     .institution { font-size: 0.82rem; color: var(--text-muted); line-height: 1.45; }
     .institution strong { color: var(--text); font-weight: 600; }
-    .qr-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .qr-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.55em 1em;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text);
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      text-decoration: none;
-      transition: border-color 0.15s ease, color 0.15s ease;
-    }
-    .qr-btn:hover { border-color: var(--amber); color: var(--amber); }
-    .qr-btn small { font-weight: 400; opacity: 0.65; margin-left: 0.15em; }
 """
 
 # ── HTML helpers ──────────────────────────────────────────────────────────────
@@ -328,13 +311,6 @@ def render_landing_page(config: dict, slug: str) -> str:
         f'      <p class="subtitle">{escape(subtitle)}</p>\n'
         "    </header>\n"
         + cards +
-        '    <div class="section-label">QR Code</div>\n'
-        '    <div class="qr-row">\n'
-        f'      <a class="qr-btn" href="qr.svg" download="{slug}-qr.svg">'
-        "&#x2193; SVG <small>vector &middot; for print</small></a>\n"
-        f'      <a class="qr-btn" href="qr.png" download="{slug}-qr.png">'
-        "&#x2193; PNG <small>raster &middot; for screen</small></a>\n"
-        "    </div>\n"
         "  </main>\n"
         "  <footer>\n"
         '    <div class="footer-label">Research institutions</div>\n'

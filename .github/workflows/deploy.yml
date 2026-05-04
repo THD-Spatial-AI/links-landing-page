@@ -33,7 +33,7 @@ jobs:
       - name: Generate QR codes
         run: |
           SITE_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-          python3 scripts/generate_qr.py --site-url "${SITE_URL}"
+          python3 scripts/generate_qr.py --site-url "${SITE_URL}" --site-dir _site
 
       - name: Build MkDocs
         run: mkdocs build --site-dir _site/docs

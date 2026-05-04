@@ -1,0 +1,22 @@
+name: Link Check
+
+on:
+  workflow_run:
+    workflows: ["Build and Deploy"]
+    types: [completed]
+  schedule:
+    - cron: '0 6 * * 1'  # Every Monday at 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check all links and published pages
+        run: python3 scripts/check_links.py

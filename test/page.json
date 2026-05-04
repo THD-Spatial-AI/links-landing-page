@@ -1,0 +1,31 @@
+{
+  "event": "Test Event",
+  "title": "Event Title",
+  "subtitle": "Subtitle for the event",
+  "links": [
+    {
+      "category": "Category 1",
+      "title": "Title 1",
+      "url": "https://thd-spatial-ai.github.io/linkhub/test/",
+      "description": "Test landing page",
+      "icon": "test"
+    },
+    {
+      "category": "Category 2",
+      "title": "Title 2",
+      "url": "https://thd-spatial-ai.github.io/linkhub/test/",
+      "description": "Testing landing page",
+      "icon": "globe"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Department name",
+      "unit": "University name, country"
+    },
+    {
+      "name": "Department name",
+      "unit": "University name, country"
+    }
+  ]
+}

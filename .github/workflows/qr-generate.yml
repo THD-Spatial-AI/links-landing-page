@@ -1,0 +1,37 @@
+name: Generate QR Codes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/page.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate QR codes into source event folders
+        run: |
+          python3 scripts/generate_qr.py \
+            --site-url "https://thd-spatial-ai.github.io/linkhub"
+
+      - name: Commit QR codes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -- '*/qr.png' '*/qr.svg'
+          git diff --cached --quiet || \
+            git commit -m "chore: regenerate QR codes [skip ci]" && git push

@@ -2,19 +2,26 @@
 """
 Generate QR codes for all event pages.
 
-Reads every */page.json in the repository root and writes:
-    _site/{slug}/qr.png  — high-resolution PNG  (screen / digital poster)
-    _site/{slug}/qr.svg  — scalable vector SVG   (print-ready)
+Reads every */page.json in the repository root and writes qr.png and qr.svg.
+
+Default output: source event folder (e.g. egu-2026/qr.png) — suitable for
+committing to the repository so presenters can download directly from GitHub.
+
+Pass --site-dir _site to write into the built site instead (used by deploy.yml).
 
 Both files use the navy colour (#1B3A6B) matching the landing page design.
 Error correction is set to HIGH (H) so the QR code remains scannable even
 if part of it is obscured or damaged on a printed poster.
 
-Run generate.py first to create _site/.
-
 Usage:
+    # Write to source event folders (default):
     python3 scripts/generate_qr.py \\
-        --site-url https://thd-spatial-ai.github.io/links-landing-page
+        --site-url https://thd-spatial-ai.github.io/linkhub
+
+    # Write into _site/ for deployment:
+    python3 scripts/generate_qr.py \\
+        --site-url https://thd-spatial-ai.github.io/linkhub \\
+        --site-dir _site
 """
 
 import argparse
@@ -34,7 +41,6 @@ except ImportError:
     )
 
 ROOT  = Path(__file__).resolve().parent.parent
-SITE  = ROOT / "_site"
 _SKIP = frozenset({"_site", "_template", "scripts", "docs", ".github"})
 
 _COLOR = "#1B3A6B"  # navy — matches the landing page palette
@@ -43,7 +49,7 @@ _COLOR = "#1B3A6B"  # navy — matches the landing page palette
 def _make_png(url: str, path: Path) -> None:
     qr = qrcode.QRCode(
         error_correction=qrcode.constants.ERROR_CORRECT_H,
-        box_size=15,   # 15 px per module → ~570 px for a v3 code (good for 300 dpi print)
+        box_size=15,
         border=4,
     )
     qr.add_data(url)
@@ -64,7 +70,6 @@ def _make_svg(url: str, path: Path) -> None:
     buf = BytesIO()
     img.save(buf)
     svg = buf.getvalue().decode("utf-8")
-    # Recolour modules from default black to navy
     svg = svg.replace('fill="#000000"', f'fill="{_COLOR}"')
     path.write_text(svg, encoding="utf-8")
 
@@ -76,17 +81,23 @@ def main() -> None:
     )
     parser.add_argument(
         "--site-url",
-        default="https://thd-spatial-ai.github.io/links-landing-page",
+        default="https://thd-spatial-ai.github.io/linkhub",
         metavar="URL",
-        help="GitHub Pages base URL without a trailing slash.\n"
-             "Example: https://thd-spatial-ai.github.io/my-repo",
+        help="GitHub Pages base URL without a trailing slash.",
+    )
+    parser.add_argument(
+        "--site-dir",
+        default=None,
+        metavar="DIR",
+        help="Write QR codes to DIR/{slug}/ instead of the source event folder.",
     )
     args = parser.parse_args()
     site_url = args.site_url.rstrip("/")
+    site_dir = Path(args.site_dir) if args.site_dir else None
 
-    if not SITE.exists():
+    if site_dir and not site_dir.exists():
         raise SystemExit(
-            "Error: _site/ does not exist.\n"
+            f"Error: {site_dir}/ does not exist.\n"
             "Run generate.py first:  python3 scripts/generate.py"
         )
 
@@ -97,21 +108,21 @@ def main() -> None:
             continue
 
         url = f"{site_url}/{slug}/"
-        out_dir = SITE / slug
-        out_dir.mkdir(exist_ok=True)
+        if site_dir:
+            out_dir = site_dir / slug
+            out_dir.mkdir(exist_ok=True)
+        else:
+            out_dir = page_json.parent  # source event folder
 
         _make_png(url, out_dir / "qr.png")
         _make_svg(url, out_dir / "qr.svg")
-        print(f"  {slug}/qr.png  {slug}/qr.svg  →  {url}")
+        print(f"  {out_dir / 'qr.png'}  {out_dir / 'qr.svg'}  →  {url}")
         count += 1
 
     if count == 0:
         print("No event pages found.")
     else:
-        print(f"\nDone. {count} QR code(s) written to _site/")
-        print("After deployment, download them from your GitHub Pages URL:")
-        print(f"  {site_url}/{{slug}}/qr.svg")
-        print(f"  {site_url}/{{slug}}/qr.png")
+        print(f"\nDone. {count} QR code(s) generated.")
 
 
 if __name__ == "__main__":

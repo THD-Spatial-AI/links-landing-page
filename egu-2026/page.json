@@ -4,6 +4,13 @@
   "subtitle": "Integrating a building energy model with a regional planning tool for energy community analysis.",
   "links": [
     {
+      "category": "Conference",
+      "title": "Abstract",
+      "url": "https://meetingorganizer.copernicus.org/EGU26/EGU26-5363.html",
+      "description": "Integration of a building energy model with a regional planning tool for energy communities analysis",
+      "icon": "paper"
+    },
+    {
       "category": "Planning Tool",
       "title": "EnerPlanET App",
       "url": "https://enerplanet.th-deg.de/",
@@ -19,20 +26,20 @@
     },
     {
       "category": "Source Code",
-      "title": "city2tabula",
+      "title": "City2TABULA",
       "url": "https://github.com/THD-Spatial-AI/city2tabula",
       "description": "City data processing tool — generates TABULA-compatible building typology inputs",
-      "icon": "table"
+      "icon": "code"
     }
   ],
   "institutions": [
     {
       "name": "Copernicus Institute of Sustainable Development",
-      "unit": "Utrecht University"
+      "unit": "Utrecht University, Netherlands"
     },
     {
       "name": "Faculty of Applied Informatics",
-      "unit": "Technische Hochschule Deggendorf (THD)"
+      "unit": "Technische Hochschule Deggendorf (THD), Germany"
     }
   ]
 }

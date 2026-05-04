@@ -158,23 +158,6 @@
     }
     .institution { font-size: 0.82rem; color: var(--text-muted); line-height: 1.45; }
     .institution strong { color: var(--text); font-weight: 600; }
-    .qr-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .qr-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.55em 1em;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text);
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      text-decoration: none;
-      transition: border-color 0.15s ease, color 0.15s ease;
-    }
-    .qr-btn:hover { border-color: var(--amber); color: var(--amber); }
-    .qr-btn small { font-weight: 400; opacity: 0.65; margin-left: 0.15em; }
   </style>
 </head>
 <body>
@@ -184,6 +167,15 @@
       <h1>BuEM <span class="x">×</span> EnerPlanET</h1>
       <p class="subtitle">Integrating a building energy model with a regional planning tool for energy community analysis.</p>
     </header>
+    <div class="section-label">Conference</div>
+    <a class="card" href="https://meetingorganizer.copernicus.org/EGU26/EGU26-5363.html" target="_blank" rel="noopener noreferrer">
+      <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+      <div class="card-body">
+        <div class="card-title">Abstract</div>
+        <div class="card-desc">Integration of a building energy model with a regional planning tool for energy communities analysis</div>
+      </div>
+      <span class="card-arrow" aria-hidden="true">&#x203A;</span>
+    </a>
     <div class="section-label">Planning Tool</div>
     <a class="card" href="https://enerplanet.th-deg.de/" target="_blank" rel="noopener noreferrer">
       <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a14.5 14.5 0 0 1 0 18M12 3a14.5 14.5 0 0 0 0 18M3 12h18"/></svg></div>
@@ -203,23 +195,18 @@
       <span class="card-arrow" aria-hidden="true">&#x203A;</span>
     </a>
     <a class="card" href="https://github.com/THD-Spatial-AI/city2tabula" target="_blank" rel="noopener noreferrer">
-      <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></div>
+      <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
       <div class="card-body">
-        <div class="card-title">city2tabula</div>
+        <div class="card-title">City2TABULA</div>
         <div class="card-desc">City data processing tool — generates TABULA-compatible building typology inputs</div>
       </div>
       <span class="card-arrow" aria-hidden="true">&#x203A;</span>
     </a>
-    <div class="section-label">QR Code</div>
-    <div class="qr-row">
-      <a class="qr-btn" href="qr.svg" download="egu-2026-qr.svg">&#x2193; SVG <small>vector &middot; for print</small></a>
-      <a class="qr-btn" href="qr.png" download="egu-2026-qr.png">&#x2193; PNG <small>raster &middot; for screen</small></a>
-    </div>
   </main>
   <footer>
     <div class="footer-label">Research institutions</div>
-    <p class="institution"><strong>Copernicus Institute of Sustainable Development</strong><br>Utrecht University</p>
-    <p class="institution"><strong>Faculty of Applied Informatics</strong><br>Technische Hochschule Deggendorf (THD)</p>
+    <p class="institution"><strong>Copernicus Institute of Sustainable Development</strong><br>Utrecht University, Netherlands</p>
+    <p class="institution"><strong>Faculty of Applied Informatics</strong><br>Technische Hochschule Deggendorf (THD), Germany</p>
   </footer>
 </body>
 </html>
