@@ -113,13 +113,8 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Checklist: getting-started/open-source-checklist.md
-  - Repository Naming: getting-started/repository-naming.md
-  - Documentation Setup: getting-started/documentation-setup.md
-  - Legal Sync: getting-started/legal-sync.md
-  - Branch Naming: getting-started/branch-naming.md
-  - Branch Rules: getting-started/branch-rules.md
-  - Commit Conventions: getting-started/commit-conventions.md
+  - Add a Page: add-a-page.md
+  - Config Reference: config-reference.md
 
 # Copyright
 copyright: |
