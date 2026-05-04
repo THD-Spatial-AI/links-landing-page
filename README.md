@@ -1,9 +1,13 @@
 # LinkHub
 
+[![MkDocs](https://github.com/THD-Spatial-AI/linkhub/actions/workflows/docs.yml/badge.svg)](https://thd-spatial-ai.github.io/linkhub/docs)
+
 A central platform for publishing permanent landing pages for conferences, events, and research projects.
 Each page is defined by a single `page.json` file and deployed automatically to GitHub Pages.
 
 **Documentation:** [LinkHub-Docs](https://thd-spatial-ai.github.io/linkhub/docs/)
+
+**LinkHub:** [Main Landing Page](https://thd-spatial-ai.github.io/linkhub/)
 
 ## Quick start
 
